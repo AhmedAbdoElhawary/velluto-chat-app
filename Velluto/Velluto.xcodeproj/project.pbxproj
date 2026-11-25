@@ -6,6 +6,12 @@
 	objectVersion = 90;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		000000000000000000000221 /* VellutoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 000000000000000000000211 /* VellutoKit */; };
+		000000000000000000000222 /* VellutoDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 000000000000000000000212 /* VellutoDomain */; };
+		000000000000000000000223 /* VellutoData in Frameworks */ = {isa = PBXBuildFile; productRef = 000000000000000000000213 /* VellutoData */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* Velluto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velluto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -22,6 +28,9 @@
 		000000000000000130000000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				000000000000000000000221 /* VellutoKit in Frameworks */,
+				000000000000000000000222 /* VellutoDomain in Frameworks */,
+				000000000000000000000223 /* VellutoData in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -60,6 +69,11 @@
 				000000000000000000000010 /* Velluto */,
 			);
 			name = Velluto;
+			packageProductDependencies = (
+				000000000000000000000211 /* VellutoKit */,
+				000000000000000000000212 /* VellutoDomain */,
+				000000000000000000000213 /* VellutoData */,
+			);
 			productName = MyApp;
 			productReference = 000000000000000000000120 /* Velluto.app */;
 			productType = "com.apple.product-type.application";
@@ -88,6 +102,11 @@
 			);
 			mainGroup = 000000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				000000000000000000000201 /* XCLocalSwiftPackageReference "Packages/VellutoKit" */,
+				000000000000000000000202 /* XCLocalSwiftPackageReference "Packages/VellutoDomain" */,
+				000000000000000000000203 /* XCLocalSwiftPackageReference "Packages/VellutoData" */,
+			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
 			projectDirPath = "";
@@ -250,6 +269,7 @@
 		000000000000000111000000 /* Debug configuration for PBXNativeTarget "Velluto" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
@@ -289,6 +309,7 @@
 		000000000000000112000000 /* Release configuration for PBXNativeTarget "Velluto" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
@@ -345,6 +366,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		000000000000000000000201 /* XCLocalSwiftPackageReference "Packages/VellutoKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/VellutoKit;
+		};
+		000000000000000000000202 /* XCLocalSwiftPackageReference "Packages/VellutoDomain" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/VellutoDomain;
+		};
+		000000000000000000000203 /* XCLocalSwiftPackageReference "Packages/VellutoData" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/VellutoData;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		000000000000000000000211 /* VellutoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VellutoKit;
+		};
+		000000000000000000000212 /* VellutoDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VellutoDomain;
+		};
+		000000000000000000000213 /* VellutoData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VellutoData;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 000000000000000000000000 /* Project object */;
 }

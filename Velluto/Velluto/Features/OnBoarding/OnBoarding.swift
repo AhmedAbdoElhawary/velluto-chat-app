@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import VellutoKit
 
 struct OnBoarding: View {
     @State var page: Int = 0
@@ -17,7 +18,7 @@ struct OnBoarding: View {
                     maxWidth: .infinity,
                     alignment: .trailing
                 )
-                .padding(.horizontal, AppSpace.s24)
+                .padding(.horizontal, VSpace.l)
 
             TabView(selection: $page) {
                 Welcome1().tag(0)
@@ -37,7 +38,7 @@ struct OnBoarding: View {
                 }.frame(
                     maxWidth: .infinity,
                     alignment: .leading
-                ).padding(.bottom, AppSpace.s16)
+                ).padding(.bottom, VSpace.m)
                     .animation(.spring, value: page)
 
                 //
@@ -45,20 +46,20 @@ struct OnBoarding: View {
                     .fontWeight(.semibold)
                     .foregroundColor(.vOnAccent)
                     .frame(maxWidth: .infinity)
-                    .padding(.all, AppSpace.s16)
+                    .padding(.all, VSpace.m)
                     .background(
                         .vAccent,
-                        in: .rect(cornerRadius: AppRadius.s14)
+                        in: .rect(cornerRadius: VRadius.button)
                     )
                     .onTapGesture {
                         if page < 2 {
                             withAnimation { page += 1 }
                         }
                     }
-            }.padding(.horizontal, AppSpace.s24)
+            }.padding(.horizontal, VSpace.l)
 
         }.backgroundStyle(.vBackground)
-            .padding(.vertical, AppSpace.s24)
+            .padding(.vertical, VSpace.l)
 
     }
 }

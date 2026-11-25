@@ -7,6 +7,7 @@
 
 import Playgrounds
 import SwiftUI
+import VellutoKit
 
 struct Welcome1: View {
     var body: some View {
@@ -16,16 +17,16 @@ struct Welcome1: View {
             content: VStack {
                 Text("Dinner on Friday?")
                     .foregroundColor(.vTextPrimary)
-                    .padding(.vertical, AppSpace.s8)
-                    .padding(.horizontal, AppSpace.s16)
+                    .padding(.vertical, VSpace.s)
+                    .padding(.horizontal, VSpace.m)
                     .background(
                         .vReceived,
                         in: .rect(
                             cornerRadii: RectangleCornerRadii(
-                                topLeading: AppRadius.s20,
-                                bottomLeading: AppRadius.s6,
-                                bottomTrailing: AppRadius.s20,
-                                topTrailing: AppRadius.s20
+                                topLeading: VRadius.bubble,
+                                bottomLeading: VRadius.bubbleTail,
+                                bottomTrailing: VRadius.bubble,
+                                topTrailing: VRadius.bubble
 
                             )
                         )
@@ -37,16 +38,16 @@ struct Welcome1: View {
 
                 Text("Only if it's Volta.")
                     .foregroundColor(.vOnAccent)
-                    .padding(.vertical, AppSpace.s8)
-                    .padding(.horizontal, AppSpace.s16)
+                    .padding(.vertical, VSpace.s)
+                    .padding(.horizontal, VSpace.m)
                     .background(
                         .vAccent,
                         in: .rect(
                             cornerRadii: RectangleCornerRadii(
-                                topLeading: AppRadius.s20,
-                                bottomLeading: AppRadius.s20,
-                                bottomTrailing: AppRadius.s6,
-                                topTrailing: AppRadius.s20
+                                topLeading: VRadius.bubble,
+                                bottomLeading: VRadius.bubble,
+                                bottomTrailing: VRadius.bubbleTail,
+                                topTrailing: VRadius.bubble
 
                             )
                         )
