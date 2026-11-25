@@ -89,7 +89,7 @@ Velluto (app)   Features/<Section>/ · AppContainer · Strings
 - Tokens use the spec's names so every spec note maps 1:1: `Color.v*`, `VSpace`, `VRadius`, `VType`, `VMotion`, `VHaptic`.
 - Every user-facing string is a `LocalizedStringResource` constant in `Strings`, backed by `Localizable.xcstrings`. `Text(someString)` shows a `String` verbatim and never localizes it. Keys are short and dotted by screen, with the English as `defaultValue`: `LocalizedStringResource("welcome1.title", defaultValue: "...")`. English and Arabic (Modern Standard) + RTL ship in v1, so every screen lands with both columns filled.
 - On-screen text goes through VellutoKit's `AppText` view: `AppText.display(Strings.welcome1Title)`. `TextRole` sets the font and tracking, `TextTone` the colour, and the role picks the default tone. A bare `Text` only where an API needs a `Text` (concatenation, `TextField` prompts).
-- Icons are SF Symbols (`Image(systemName:)`). The V monogram is the one custom glyph, drawn as a `Shape`.
+- Icons are SF Symbols (`Image(systemName:)`). The V monogram is the one custom glyph, a vector image shared with the launch screen so the first frame matches it.
 
 ## Design rules (the review checklist)
 
