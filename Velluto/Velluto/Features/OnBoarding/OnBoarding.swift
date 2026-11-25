@@ -9,15 +9,20 @@ import SwiftUI
 import VellutoKit
 
 struct OnBoarding: View {
+    @Environment(AppRouter.self) private var router
     @State var page: Int = 0
     var body: some View {
         VStack {
-            AppText.message(Strings.skip, tone: .secondary)
-                .frame(
-                    maxWidth: .infinity,
-                    alignment: .trailing
-                )
-                .padding(.horizontal, VSpace.l)
+            Button {
+                router.authPath.append(.phoneSignIn)
+            } label: {
+                AppText.message(Strings.skip, tone: .secondary)
+            }
+            .frame(
+                maxWidth: .infinity,
+                alignment: .trailing
+            )
+            .padding(.horizontal, VSpace.l)
 
             TabView(selection: $page) {
                 Welcome1().tag(0)
@@ -41,7 +46,7 @@ struct OnBoarding: View {
                     .animation(.spring, value: page)
 
                 //
-                AppText.button(Strings.continueText, tone: .onAccent)
+                AppText.button(Strings.continueText)
                     .frame(maxWidth: .infinity)
                     .padding(.all, VSpace.m)
                     .background(
@@ -51,16 +56,20 @@ struct OnBoarding: View {
                     .onTapGesture {
                         if page < 2 {
                             withAnimation { page += 1 }
+                        } else {
+                            router.authPath.append(.phoneSignIn)
                         }
                     }
             }.padding(.horizontal, VSpace.l)
 
-        }.backgroundStyle(.vBackground)
-            .padding(.vertical, VSpace.l)
+        }
+        .padding(.vertical, VSpace.l)
+        .background(.vBackground)
 
     }
 }
 
 #Preview {
     OnBoarding()
+        .environment(AppRouter())
 }

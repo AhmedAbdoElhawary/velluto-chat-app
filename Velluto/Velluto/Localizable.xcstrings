@@ -17,6 +17,22 @@
         }
       }
     },
+    "placeholder.wip" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قيد العمل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Work in progress"
+          }
+        }
+      }
+    },
     "skip" : {
       "localizations" : {
         "ar" : {
@@ -32,6 +48,18 @@
           }
         }
       }
+    },
+    "splash.wordmark" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "VELLUTO"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "welcome1.bubble1" : {
       "localizations" : {

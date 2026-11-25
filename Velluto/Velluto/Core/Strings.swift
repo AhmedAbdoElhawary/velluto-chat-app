@@ -8,6 +8,8 @@
 import Foundation
 
 struct Strings {
+    static let splashWordmark = LocalizedStringResource("splash.wordmark", defaultValue: "VELLUTO")
+
     static let skip = LocalizedStringResource("skip", defaultValue: "Skip")
 
     static let welcome1Title = LocalizedStringResource("welcome1.title", defaultValue: "Conversations,\nkept close.")
@@ -22,4 +24,6 @@ struct Strings {
     static let welcome3Subtitle = LocalizedStringResource("welcome3.subtitle", defaultValue: "Messages and calls are end-to-end encrypted. Only you and the people you talk to can read them.")
 
     static let continueText = LocalizedStringResource("continue", defaultValue: "Continue")
+
+    static let workInProgress = LocalizedStringResource("placeholder.wip", defaultValue: "Work in progress")
 }

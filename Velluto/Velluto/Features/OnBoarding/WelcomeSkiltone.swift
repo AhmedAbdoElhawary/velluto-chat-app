@@ -23,6 +23,7 @@ struct WelcomeSkiltone<Content: View>: View {
                     maxHeight: .infinity,
                     alignment: .center
                 )
+                .background { VAmbientGlow() }
 
             //
             VStack {
@@ -45,7 +46,7 @@ struct WelcomeSkiltone<Content: View>: View {
                     )
                     .padding(.bottom, VSpace.m)
 
-            }.frame(maxHeight: .infinity, alignment: .bottom)
+            }
 
         }.padding(.horizontal, VSpace.l)
 
