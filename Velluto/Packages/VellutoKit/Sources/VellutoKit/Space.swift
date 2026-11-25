@@ -21,3 +21,8 @@ public enum VRadius {
     public static let segmented: CGFloat = 10
     public static let sheet: CGFloat = 28
 }
+
+public enum VSize {
+    public static let glowWidth: CGFloat = 420
+    public static let glowHeight: CGFloat = 360
+}

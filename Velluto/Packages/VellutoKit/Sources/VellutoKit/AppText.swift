@@ -2,7 +2,7 @@ import SwiftUI
 
 /// what the text is, not how it looks
 public enum TextRole: CaseIterable {
-    case largeTitle, display, headerName, storyCaption
+    case largeTitle, display, headerName, storyCaption, wordmark
     case headline, message, subhead, footnote, caption, button
     case timestamp, timer
 
@@ -12,6 +12,7 @@ public enum TextRole: CaseIterable {
         case .display: VType.display
         case .headerName: VType.headerName
         case .storyCaption: VType.storyCaption
+        case .wordmark: VType.wordmark
         case .headline: VType.headline
         case .message: VType.message
         case .subhead: VType.subhead
@@ -27,6 +28,7 @@ public enum TextRole: CaseIterable {
         switch self {
         case .largeTitle: -0.4
         case .display: -0.3
+        case .wordmark: 6
         case .caption: 0.3
         case .timer: 1
         default: 0
@@ -35,7 +37,7 @@ public enum TextRole: CaseIterable {
 
     var tone: TextTone {
         switch self {
-        case .subhead, .footnote, .caption, .timestamp: .secondary
+        case .wordmark, .subhead, .footnote, .caption, .timestamp: .secondary
         default: .primary
         }
     }
@@ -79,12 +81,13 @@ public extension AppText {
     static func display(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .display, tone: tone) }
     static func headerName(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .headerName, tone: tone) }
     static func storyCaption(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .storyCaption, tone: tone) }
+    static func wordmark(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .wordmark, tone: tone) }
     static func headline(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .headline, tone: tone) }
     static func message(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .message, tone: tone) }
     static func subhead(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .subhead, tone: tone) }
     static func footnote(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .footnote, tone: tone) }
     static func caption(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .caption, tone: tone) }
-    static func button(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .button, tone: tone) }
+    static func button(_ text: LocalizedStringResource, tone: TextTone? = .onAccent) -> AppText { AppText(text, role: .button, tone: tone) }
     static func timestamp(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .timestamp, tone: tone) }
     static func timer(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .timer, tone: tone) }
 }

@@ -6,6 +6,7 @@ public enum VType {
     public static let display = Font.system(.title, design: .serif)
     public static let headerName = Font.system(.headline, design: .serif)
     public static let storyCaption = Font.system(.title2, design: .serif).italic()
+    public static let wordmark = Font.system(.footnote, design: .serif)
 
     public static let headline = Font.system(.headline)
     public static let message = Font.system(.callout)
