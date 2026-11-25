@@ -12,11 +12,10 @@ import VellutoKit
 struct Welcome1: View {
     var body: some View {
         WelcomeSkiltone(
-            title: AppText.welcome1Title,
-            subtitle: AppText.welcome1Subtitle,
+            title: Strings.welcome1Title,
+            subtitle: Strings.welcome1Subtitle,
             content: VStack {
-                Text("Dinner on Friday?")
-                    .foregroundColor(.vTextPrimary)
+                AppText.message(Strings.welcome1Bubble1)
                     .padding(.vertical, VSpace.s)
                     .padding(.horizontal, VSpace.m)
                     .background(
@@ -36,8 +35,7 @@ struct Welcome1: View {
                         alignment: .leading
                     )
 
-                Text("Only if it's Volta.")
-                    .foregroundColor(.vOnAccent)
+                AppText.message(Strings.welcome1Bubble2, tone: .onAccent)
                     .padding(.vertical, VSpace.s)
                     .padding(.horizontal, VSpace.m)
                     .background(

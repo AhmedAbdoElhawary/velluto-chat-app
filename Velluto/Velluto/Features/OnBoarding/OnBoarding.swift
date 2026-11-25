@@ -12,8 +12,7 @@ struct OnBoarding: View {
     @State var page: Int = 0
     var body: some View {
         VStack {
-            Text(AppText.skip)
-                .foregroundColor(.vTextSecondary)
+            AppText.message(Strings.skip, tone: .secondary)
                 .frame(
                     maxWidth: .infinity,
                     alignment: .trailing
@@ -42,9 +41,7 @@ struct OnBoarding: View {
                     .animation(.spring, value: page)
 
                 //
-                Text(AppText.continueText)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.vOnAccent)
+                AppText.button(Strings.continueText, tone: .onAccent)
                     .frame(maxWidth: .infinity)
                     .padding(.all, VSpace.m)
                     .background(

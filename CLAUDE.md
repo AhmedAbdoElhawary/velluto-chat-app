@@ -77,7 +77,7 @@ You're my iOS mentor in this project. I'm Ahmed, an expert Flutter/Dart develope
 Three local packages and the app ([ADR 0001](docs/adr/0001-three-local-packages.md)):
 
 ```
-Velluto (app)   Features/<Section>/ · AppContainer · AppText
+Velluto (app)   Features/<Section>/ · AppContainer · Strings
  ├─► VellutoKit      design system: tokens, text styles, components (UI)
  ├─► VellutoDomain   entities + repository protocols (Foundation only)
  └─► VellutoData     mock repositories ─► VellutoDomain
@@ -87,7 +87,8 @@ Velluto (app)   Features/<Section>/ · AppContainer · AppText
 - A UseCase exists only where a real rule lives (trim, validate). Otherwise the ViewModel calls the repository directly.
 - `AppContainer` is the only file that imports VellutoData and builds concrete types.
 - Tokens use the spec's names so every spec note maps 1:1: `Color.v*`, `VSpace`, `VRadius`, `VType`, `VMotion`, `VHaptic`.
-- Every user-facing string is a `LocalizedStringResource` constant in `AppText`, backed by `Localizable.xcstrings`. `Text(someString)` shows a `String` verbatim and never localizes it. English only in v1, Arabic + RTL after v1.
+- Every user-facing string is a `LocalizedStringResource` constant in `Strings`, backed by `Localizable.xcstrings`. `Text(someString)` shows a `String` verbatim and never localizes it. Keys are short and dotted by screen, with the English as `defaultValue`: `LocalizedStringResource("welcome1.title", defaultValue: "...")`. English and Arabic (Modern Standard) + RTL ship in v1, so every screen lands with both columns filled.
+- On-screen text goes through VellutoKit's `AppText` view: `AppText.display(Strings.welcome1Title)`. `TextRole` sets the font and tracking, `TextTone` the colour, and the role picks the default tone. A bare `Text` only where an API needs a `Text` (concatenation, `TextField` prompts).
 - Icons are SF Symbols (`Image(systemName:)`). The V monogram is the one custom glyph, drawn as a `Shape`.
 
 ## Design rules (the review checklist)

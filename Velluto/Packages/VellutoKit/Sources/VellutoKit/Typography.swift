@@ -17,10 +17,3 @@ public enum VType {
     public static let timestamp = Font.system(.caption, design: .monospaced)
     public static let timer = Font.system(.body, design: .monospaced)
 }
-
-public extension View {
-    func vLargeTitle() -> some View { font(VType.largeTitle).tracking(-0.4) }
-    func vDisplay() -> some View { font(VType.display).tracking(-0.3) }
-    func vCaption() -> some View { font(VType.caption).tracking(0.3) }
-    func vTimer() -> some View { font(VType.timer).tracking(1) }
-}

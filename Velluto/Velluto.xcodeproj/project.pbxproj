@@ -99,6 +99,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 000000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
@@ -385,14 +386,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		000000000000000000000211 /* VellutoKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 000000000000000000000201 /* XCLocalSwiftPackageReference "Packages/VellutoKit" */;
 			productName = VellutoKit;
 		};
 		000000000000000000000212 /* VellutoDomain */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 000000000000000000000202 /* XCLocalSwiftPackageReference "Packages/VellutoDomain" */;
 			productName = VellutoDomain;
 		};
 		000000000000000000000213 /* VellutoData */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 000000000000000000000203 /* XCLocalSwiftPackageReference "Packages/VellutoData" */;
 			productName = VellutoData;
 		};
 /* End XCSwiftPackageProductDependency section */

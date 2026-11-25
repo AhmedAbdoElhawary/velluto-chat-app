@@ -26,9 +26,7 @@ struct WelcomeSkiltone<Content: View>: View {
 
             //
             VStack {
-                Text(title)
-                    .foregroundColor(.vTextPrimary)
-                    .font(.system(size: 34))
+                AppText.display(title)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.trailing, VSpace.l)
                     .padding(.bottom, VSpace.m)
@@ -38,8 +36,7 @@ struct WelcomeSkiltone<Content: View>: View {
                     )
 
                 //
-                Text(subtitle)
-                    .foregroundColor(.vTextSecondary)
+                AppText.subhead(subtitle)
                     .fixedSize(horizontal: false, vertical: true)
 
                     .frame(

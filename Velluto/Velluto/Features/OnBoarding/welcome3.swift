@@ -11,8 +11,8 @@ import SwiftUI
 struct Welcome3: View {
     var body: some View {
         WelcomeSkiltone(
-            title: AppText.welcome3Title,
-            subtitle: AppText.welcome3Subtitle,
+            title: Strings.welcome3Title,
+            subtitle: Strings.welcome3Subtitle,
             content: VStack {
               
             }
