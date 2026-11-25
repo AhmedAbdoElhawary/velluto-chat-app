@@ -7,16 +7,17 @@
 
 import Playgrounds
 import SwiftUI
+import VellutoKit
 
 struct WelcomeSkiltone<Content: View>: View {
-    let title: String
-    let subtitle: String
+    let title: LocalizedStringResource
+    let subtitle: LocalizedStringResource
     let content: Content
 
     var body: some View {
         VStack {
             content
-                .padding(.horizontal, AppSpace.s24)
+                .padding(.horizontal, VSpace.l)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity,
@@ -29,8 +30,8 @@ struct WelcomeSkiltone<Content: View>: View {
                     .foregroundColor(.vTextPrimary)
                     .font(.system(size: 34))
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.trailing, AppSpace.s24)
-                    .padding(.bottom, AppSpace.s16)
+                    .padding(.trailing, VSpace.l)
+                    .padding(.bottom, VSpace.m)
                     .frame(
                         maxWidth: .infinity,
                         alignment: .leading
@@ -45,11 +46,11 @@ struct WelcomeSkiltone<Content: View>: View {
                         maxWidth: .infinity,
                         alignment: .leading
                     )
-                    .padding(.bottom, AppSpace.s16)
+                    .padding(.bottom, VSpace.m)
 
             }.frame(maxHeight: .infinity, alignment: .bottom)
 
-        }.padding(.horizontal, AppSpace.s24)
+        }.padding(.horizontal, VSpace.l)
 
     }
 }
