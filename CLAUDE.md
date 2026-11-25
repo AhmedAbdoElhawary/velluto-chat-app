@@ -62,6 +62,7 @@ You're my iOS mentor in this project. I'm Ahmed, an expert Flutter/Dart develope
 ## Fixed constraints
 
 - iOS 26 minimum · Xcode 27 · Swift 6 language mode, strict concurrency. An iOS 27-only API needs `if #available(iOS 27, *)` with an iOS 26 fallback.
+- iPhone only, portrait only. A version that ships with iPad support can't drop it later, so iPad waits for its own milestone.
 - System Liquid Glass on bars and sheets. Glass wins for chrome (nav bar, tab bar, toolbars, sheets) even where Figma or the handoff paints `vSurface`. Figma wins for the content inside.
 - SwiftUI only (no UIKit UI). Apple frameworks only, no third-party dependencies.
 - No backend: mock repos, fake OTP `123456`. No CallKit / WebRTC / push in v1.
