@@ -1,16 +1,194 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Continue" : {},
-    "Conversations, \nkept close." : {},
-    "Dinner on Friday?" : {},
-    "Messages and calls are end-to-end encrypted. Only you and the people you talk to can read them." : {},
-    "Messages, voice and calls with the people who matter, in one quiet place." : {},
-    "Moments that \nfade by morning." : {},
-    "Only if it's Volta." : {},
-    "Private, \nwithout effort." : {},
-    "Share a photo or a line of text with close friends. Stories disappear after 24 hours." : {},
-    "Skip" : {}
+    "continue" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "متابعة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        }
+      }
+    },
+    "placeholder.wip" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قيد العمل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Work in progress"
+          }
+        }
+      }
+    },
+    "skip" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تخطي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
+          }
+        }
+      }
+    },
+    "splash.wordmark" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "VELLUTO"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "welcome1.bubble1" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عشاء يوم الجمعة؟"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinner on Friday?"
+          }
+        }
+      }
+    },
+    "welcome1.bubble2" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فقط إن كان في فولتا."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Only if it's Volta."
+          }
+        }
+      }
+    },
+    "welcome1.subtitle" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "رسائل وصوت ومكالمات مع من يهمّك، في مكان واحد هادئ."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Messages, voice and calls with the people who matter, in one quiet place."
+          }
+        }
+      }
+    },
+    "welcome1.title" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "محادثاتك،\nقريبة دائمًا."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conversations,\nkept close."
+          }
+        }
+      }
+    },
+    "welcome2.subtitle" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شارك صورة أو سطرًا من الكلمات مع أصدقائك المقرّبين. تختفي القصص بعد 24 ساعة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share a photo or a line of text with close friends. Stories disappear after 24 hours."
+          }
+        }
+      }
+    },
+    "welcome2.title" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لحظات\nتتلاشى مع الصباح."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moments that\nfade by morning."
+          }
+        }
+      }
+    },
+    "welcome3.subtitle" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرسائل والمكالمات مشفّرة تمامًا بين الطرفين. لا يطّلع عليها أحد سواك ومن تتحدث معهم."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Messages and calls are end-to-end encrypted. Only you and the people you talk to can read them."
+          }
+        }
+      }
+    },
+    "welcome3.title" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خصوصية،\nبلا عناء."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Private,\nwithout effort."
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }

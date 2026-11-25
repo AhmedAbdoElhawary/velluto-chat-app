@@ -6,6 +6,7 @@ public enum VType {
     public static let display = Font.system(.title, design: .serif)
     public static let headerName = Font.system(.headline, design: .serif)
     public static let storyCaption = Font.system(.title2, design: .serif).italic()
+    public static let wordmark = Font.system(.footnote, design: .serif)
 
     public static let headline = Font.system(.headline)
     public static let message = Font.system(.callout)
@@ -16,11 +17,4 @@ public enum VType {
 
     public static let timestamp = Font.system(.caption, design: .monospaced)
     public static let timer = Font.system(.body, design: .monospaced)
-}
-
-public extension View {
-    func vLargeTitle() -> some View { font(VType.largeTitle).tracking(-0.4) }
-    func vDisplay() -> some View { font(VType.display).tracking(-0.3) }
-    func vCaption() -> some View { font(VType.caption).tracking(0.3) }
-    func vTimer() -> some View { font(VType.timer).tracking(1) }
 }

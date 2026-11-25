@@ -1,0 +1,29 @@
+//
+//  Strings.swift
+//  Velluto
+//
+//  Created by ahmed elhawary on 24/11/2026.
+//
+
+import Foundation
+
+struct Strings {
+    static let splashWordmark = LocalizedStringResource("splash.wordmark", defaultValue: "VELLUTO")
+
+    static let skip = LocalizedStringResource("skip", defaultValue: "Skip")
+
+    static let welcome1Title = LocalizedStringResource("welcome1.title", defaultValue: "Conversations,\nkept close.")
+    static let welcome1Subtitle = LocalizedStringResource("welcome1.subtitle", defaultValue: "Messages, voice and calls with the people who matter, in one quiet place.")
+    static let welcome1Bubble1 = LocalizedStringResource("welcome1.bubble1", defaultValue: "Dinner on Friday?")
+    static let welcome1Bubble2 = LocalizedStringResource("welcome1.bubble2", defaultValue: "Only if it's Volta.")
+
+    static let welcome2Title = LocalizedStringResource("welcome2.title", defaultValue: "Moments that\nfade by morning.")
+    static let welcome2Subtitle = LocalizedStringResource("welcome2.subtitle", defaultValue: "Share a photo or a line of text with close friends. Stories disappear after 24 hours.")
+
+    static let welcome3Title = LocalizedStringResource("welcome3.title", defaultValue: "Private,\nwithout effort.")
+    static let welcome3Subtitle = LocalizedStringResource("welcome3.subtitle", defaultValue: "Messages and calls are end-to-end encrypted. Only you and the people you talk to can read them.")
+
+    static let continueText = LocalizedStringResource("continue", defaultValue: "Continue")
+
+    static let workInProgress = LocalizedStringResource("placeholder.wip", defaultValue: "Work in progress")
+}
