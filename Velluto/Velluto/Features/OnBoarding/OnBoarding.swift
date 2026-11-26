@@ -14,7 +14,7 @@ struct OnBoarding: View {
     var body: some View {
         VStack {
             Button {
-                router.authPath.append(.phoneSignIn)
+                router.phase = .auth
             } label: {
                 AppText.message(Strings.skip, tone: .secondary)
             }
@@ -46,20 +46,13 @@ struct OnBoarding: View {
                     .animation(.spring, value: page)
 
                 //
-                AppText.button(Strings.continueText)
-                    .frame(maxWidth: .infinity)
-                    .padding(.all, VSpace.m)
-                    .background(
-                        .vAccent,
-                        in: .rect(cornerRadius: VRadius.button)
-                    )
-                    .onTapGesture {
-                        if page < 2 {
-                            withAnimation { page += 1 }
-                        } else {
-                            router.authPath.append(.phoneSignIn)
-                        }
+                PrimaryButton(label: Strings.continueText){
+                    if page < 2 {
+                        withAnimation { page += 1 }
+                    } else {
+                        router.phase = .auth
                     }
+                }
             }.padding(.horizontal, VSpace.l)
 
         }
