@@ -15,7 +15,7 @@ struct SplashView: View {
 
             AppText.wordmark(Strings.splashWordmark)
                 .opacity(showWordmark ? 1 : 0)
-                .padding(.bottom, VSpace.l)
+                .padding(.bottom, VSpace.x24)
                 .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .background(.vBackground)
