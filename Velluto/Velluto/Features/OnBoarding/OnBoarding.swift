@@ -16,7 +16,7 @@ struct OnBoarding: View {
             Button {
                 router.phase = .auth
             } label: {
-                AppText.message(Strings.skip, tone: .secondary)
+                AppText.subhead(Strings.skip)
             }
             .frame(
                 maxWidth: .infinity,
