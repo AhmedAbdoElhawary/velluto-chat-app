@@ -21,17 +21,33 @@ struct RootView: View {
             case .splash:
                 SplashView {
                     withAnimation(reduceMotion ? .easeInOut(duration: VMotion.launchReducedFade) : VMotion.launch) {
-                        router.phase = .auth
+                        router.phase = .onBoadring
                     }
                 }
                 .transition(reduceMotion ? .opacity : .opacity.combined(with: .scale(scale: VMotion.launchScale)))
                 .zIndex(1)
-            case .auth:
-                /// no fade in, the splash fades out on top, two fades would dim the middle
-                AuthFlow()
+            
+            case .onBoadring:
+                OnBoarding()
                     .transition(reduceMotion ? .identity : .offset(y: VMotion.launchRise))
+            
+            case .auth:
+                PhoneSignIn()
+                    .transition(reduceMotion ? .identity : .offset(y: VMotion.launchRise))
+            
+            case .main:
+                MainTabs()
             }
         }
         .environment(router)
     }
+}
+#Preview("Obsidian") {
+    RootView()
+        .preferredColorScheme(.dark)
+}
+
+#Preview("Pearl") {
+    RootView()
+        .preferredColorScheme(.light)
 }
