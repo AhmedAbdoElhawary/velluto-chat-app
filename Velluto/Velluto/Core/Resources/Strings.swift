@@ -31,4 +31,17 @@ struct Strings {
     static let tabStories = LocalizedStringResource("tab.stories", defaultValue: "Stories")
     static let tabCalls = LocalizedStringResource("tab.calls", defaultValue: "Calls")
     static let tabSettings = LocalizedStringResource("tab.settings", defaultValue: "Settings")
+
+    static let authTitle = LocalizedStringResource("auth.title", defaultValue: "Your number")
+    static let authSubtitle = LocalizedStringResource("auth.subtitle", defaultValue: "We'll text a six-digit code to confirm it's you.")
+
+    static let verifyTitle = LocalizedStringResource("verify.title", defaultValue: "Enter the code")
+    static func verifySubtitle(_ phoneNumber: String) -> LocalizedStringResource {
+        LocalizedStringResource("verify.subtitle", defaultValue: "Sent to \(phoneNumber).")
+    }
+    static let verifyEdit = LocalizedStringResource("verify.edit", defaultValue: "Edit")
+    static let verifyResend = LocalizedStringResource("verify.resend", defaultValue: "Resend code in")
+
+    static let profileSetupTitle = LocalizedStringResource("profileSetup.title", defaultValue: "Your profile")
+    static let profileSetupSubtitle = LocalizedStringResource("profileSetup.subtitle", defaultValue: "Your name and photo are visible to your contacts.")
 }
