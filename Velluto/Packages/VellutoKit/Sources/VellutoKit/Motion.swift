@@ -3,6 +3,10 @@ import SwiftUI
 public enum VMotion {
     public static let standard = Animation.spring(response: 0.42, dampingFraction: 0.86)
     public static let launch = Animation.spring(response: 0.5, dampingFraction: 0.9)
+    public static let counter = Animation.spring(response: 0.4, dampingFraction: 0.88)
+
+    public static let shakeOffset: CGFloat = 8
+    public static let shakeStep = 0.06
 
     public static let launchHold = 1.1
     public static let launchWordmarkFade = 0.3
