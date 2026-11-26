@@ -9,18 +9,23 @@ import SwiftUI
 import VellutoKit
 
 struct PhoneSignIn: View {
-    @Environment(AppRouter.self) private var router
+    @Environment(AppRouter.self) private var router 
 
     var body: some View {
-        Button {
-            withAnimation(.easeInOut(duration: VMotion.reducedFade)) {
-                router.phase = .main
-            }
-        } label: {
-            AppText.headline(Strings.workInProgress)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }
+        VStack(alignment: .leading,spacing:VSpace.s){
+            AppText.display(Strings.authTitle)
+            
+            AppText.subhead(Strings.authSubtitle)
+
+        }.frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .topLeading
+        )
+        .padding(.all,VSpace.l)
         .background(.vBackground)
+        
+        
     }
 }
 
