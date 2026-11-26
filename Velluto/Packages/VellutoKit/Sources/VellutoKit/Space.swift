@@ -7,7 +7,6 @@ public enum VSpace {
     public static let l: CGFloat = 24
     public static let xl: CGFloat = 32
     public static let xxl: CGFloat = 48
-    /// 16 margin + 56 avatar + 12 gap
     public static let listDividerInset: CGFloat = 84
 }
 

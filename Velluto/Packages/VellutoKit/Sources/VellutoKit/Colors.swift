@@ -15,6 +15,5 @@ public extension ShapeStyle where Self == Color {
 }
 public enum VOpacity {
     public static let glow = 0.12
-    // TODO(ahmed): pearl glow opacity is still an open decision in 01-foundations, 0.9 is its draft value
     public static let glowPearl = 0.9
 }

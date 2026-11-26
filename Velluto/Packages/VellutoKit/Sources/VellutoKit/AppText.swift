@@ -1,68 +1,15 @@
 import SwiftUI
 
-/// what the text is, not how it looks
-public enum TextRole: CaseIterable {
-    case largeTitle, display, headerName, storyCaption, wordmark
-    case headline, message, subhead, footnote, caption, button
-    case timestamp, timer
-
-    var font: Font {
-        switch self {
-        case .largeTitle: VType.largeTitle
-        case .display: VType.display
-        case .headerName: VType.headerName
-        case .storyCaption: VType.storyCaption
-        case .wordmark: VType.wordmark
-        case .headline: VType.headline
-        case .message: VType.message
-        case .subhead: VType.subhead
-        case .footnote: VType.footnote
-        case .caption: VType.caption
-        case .button: VType.button
-        case .timestamp: VType.timestamp
-        case .timer: VType.timer
-        }
-    }
-
-    var tracking: CGFloat {
-        switch self {
-        case .largeTitle: -0.4
-        case .display: -0.3
-        case .wordmark: 6
-        case .caption: 0.3
-        case .timer: 1
-        default: 0
-        }
-    }
-
-    var tone: TextTone {
-        switch self {
-        case .wordmark, .subhead, .footnote, .caption, .timestamp: .secondary
-        default: .primary
-        }
-    }
-}
-
-/// what the text means
-public enum TextTone {
-    case primary, secondary, accent, onAccent
-
-    var color: Color {
-        switch self {
-        case .primary: .vTextPrimary
-        case .secondary: .vTextSecondary
-        case .accent: .vAccent
-        case .onAccent: .vOnAccent
-        }
-    }
-}
-
 public struct AppText: View {
     let text: LocalizedStringResource
     let role: TextRole
     let tone: TextTone
 
-    public init(_ text: LocalizedStringResource, role: TextRole = .message, tone: TextTone? = nil) {
+    public init(
+        _ text: LocalizedStringResource,
+        role: TextRole = .message,
+        tone: TextTone? = nil
+    ) {
         self.text = text
         self.role = role
         self.tone = tone ?? role.tone
@@ -87,10 +34,71 @@ public extension AppText {
     static func subhead(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .subhead, tone: tone) }
     static func footnote(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .footnote, tone: tone) }
     static func caption(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .caption, tone: tone) }
-    static func button(_ text: LocalizedStringResource, tone: TextTone? = .onAccent) -> AppText { AppText(text, role: .button, tone: tone) }
+    static func button(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .button, tone: tone) }
     static func timestamp(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .timestamp, tone: tone) }
     static func timer(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .timer, tone: tone) }
 }
+
+
+public enum TextRole: CaseIterable {
+    case largeTitle, display, headerName, storyCaption, wordmark
+    case headline, message, subhead, footnote, caption, button
+    case timestamp, timer
+
+    var font: Font {
+        switch self {
+        case .largeTitle:
+            Font.system(.largeTitle, design: .serif, weight: .medium)
+        case .display: Font.system(.title, design: .serif)
+        case .headerName: Font.system(.headline, design: .serif)
+        case .storyCaption: Font.system(.title2, design: .serif).italic()
+        case .wordmark: Font.system(.footnote, design: .serif)
+
+        case .headline: Font.system(.headline)
+        case .message: Font.system(.callout)
+        case .subhead: Font.system(.subheadline)
+        case .footnote: Font.system(.footnote)
+        case .caption: Font.system(.caption2)
+        case .button: Font.system(.headline)
+
+        case .timestamp: Font.system(.caption, design: .monospaced)
+        case .timer: Font.system(.body, design: .monospaced)
+        }
+    }
+    // no need to be public and any one change it
+    internal var tracking: CGFloat {
+        switch self {
+        case .largeTitle: -0.4
+        case .display: -0.3
+        case .wordmark: 6
+        case .caption: 0.3
+        case .timer: 1
+        default: 0
+        }
+    }
+
+    var tone: TextTone {
+        switch self {
+        case .wordmark, .subhead, .footnote, .caption, .timestamp: .secondary
+        case .button:.onAccent
+        default: .primary
+        }
+    }
+}
+
+public enum TextTone {
+    case primary, secondary, accent, onAccent
+
+    var color: Color {
+        switch self {
+        case .primary: .vTextPrimary
+        case .secondary: .vTextSecondary
+        case .accent: .vAccent
+        case .onAccent: .vOnAccent
+        }
+    }
+}
+
 
 #Preview("Obsidian") {
     VStack(alignment: .leading) {
