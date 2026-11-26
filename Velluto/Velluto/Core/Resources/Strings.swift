@@ -26,4 +26,9 @@ struct Strings {
     static let continueText = LocalizedStringResource("continue", defaultValue: "Continue")
 
     static let workInProgress = LocalizedStringResource("placeholder.wip", defaultValue: "Work in progress")
+
+    static let tabChats = LocalizedStringResource("tab.chats", defaultValue: "Chats")
+    static let tabStories = LocalizedStringResource("tab.stories", defaultValue: "Stories")
+    static let tabCalls = LocalizedStringResource("tab.calls", defaultValue: "Calls")
+    static let tabSettings = LocalizedStringResource("tab.settings", defaultValue: "Settings")
 }
