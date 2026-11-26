@@ -8,9 +8,12 @@
 import Observation
 
 enum AppPhase {
-    case splash, onBoadring, auth, main
+    case splash, onBoadring, auth, profileSetup, main
 }
+
+enum AuthRoute: Hashable { case verify }
 
 @Observable final class AppRouter {
     var phase: AppPhase = .splash
+    var authPath: [AuthRoute] = []
 }

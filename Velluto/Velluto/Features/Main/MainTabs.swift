@@ -11,16 +11,16 @@ import VellutoKit
 struct MainTabs: View {
     var body: some View {
         TabView {
-            Tab(Strings.tabChats, systemImage: "bubble.left.and.bubble.right") {
+            Tab(Strings.tabChats, systemImage: VImagePath.chat) {
                 NavigationStack { ChatList() }
             }
-            Tab(Strings.tabStories, systemImage: "circle.dashed") {
+            Tab(Strings.tabStories, systemImage: VImagePath.story) {
                 NavigationStack { StoryList() }
             }
-            Tab(Strings.tabCalls, systemImage: "phone") {
+            Tab(Strings.tabCalls, systemImage: VImagePath.call) {
                 NavigationStack { CallHistory() }
             }
-            Tab(Strings.tabSettings, systemImage: "gearshape") {
+            Tab(Strings.tabSettings, systemImage: VImagePath.settings) {
                 NavigationStack { SettingsList() }
             }
         }

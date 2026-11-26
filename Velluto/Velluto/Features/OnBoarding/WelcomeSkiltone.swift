@@ -17,7 +17,7 @@ struct WelcomeSkiltone<Content: View>: View {
     var body: some View {
         VStack {
             content
-                .padding(.horizontal, VSpace.l)
+                .padding(.horizontal, VSpace.x24)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity,
@@ -29,7 +29,7 @@ struct WelcomeSkiltone<Content: View>: View {
             VStack {
                 AppText.display(title)
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.trailing, VSpace.l)
+                    .padding(.trailing, VSpace.x24)
                     .padding(.bottom, VSpace.m)
                     .frame(
                         maxWidth: .infinity,
@@ -48,7 +48,7 @@ struct WelcomeSkiltone<Content: View>: View {
 
             }
 
-        }.padding(.horizontal, VSpace.l)
+        }.padding(.horizontal, VSpace.x24)
 
     }
 }

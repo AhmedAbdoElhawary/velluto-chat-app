@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct AppText: View {
-    let text: LocalizedStringResource
+    let text: Text
     let role: TextRole
     let tone: TextTone
 
@@ -10,19 +10,37 @@ public struct AppText: View {
         role: TextRole = .message,
         tone: TextTone? = nil
     ) {
-        self.text = text
+        self.text = Text(text)
+        self.role = role
+        self.tone = tone ?? role.tone
+    }
+
+    /// for runtime values like code digits and timers, they have no key to translate
+    public init(
+        verbatim text: String,
+        role: TextRole = .message,
+        tone: TextTone? = nil
+    ) {
+        self.text = Text(verbatim: text)
         self.role = role
         self.tone = tone ?? role.tone
     }
 
     public var body: some View {
-        Text(text)
+        text
             .font(role.font)
             .tracking(role.tracking)
             .foregroundStyle(tone.color)
     }
 }
-
+public extension Text {
+    init(_ text: LocalizedStringResource, role: TextRole, tone: TextTone? = nil) {
+        self = Text(text)
+            .font(role.font)
+            .tracking(role.tracking)
+            .foregroundStyle((tone ?? role.tone).color)
+    }
+}
 public extension AppText {
     static func largeTitle(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .largeTitle, tone: tone) }
     static func display(_ text: LocalizedStringResource, tone: TextTone? = nil) -> AppText { AppText(text, role: .display, tone: tone) }
@@ -43,7 +61,7 @@ public extension AppText {
 public enum TextRole: CaseIterable {
     case largeTitle, display, headerName, storyCaption, wordmark
     case headline, message, subhead, footnote, caption, button
-    case timestamp, timer
+    case timestamp, timer, code
 
     var font: Font {
         switch self {
@@ -63,6 +81,7 @@ public enum TextRole: CaseIterable {
 
         case .timestamp: Font.system(.caption, design: .monospaced)
         case .timer: Font.system(.body, design: .monospaced)
+        case .code: Font.system(.title, design: .monospaced)
         }
     }
     // no need to be public and any one change it
@@ -86,6 +105,7 @@ public enum TextRole: CaseIterable {
     }
 }
 
+// todo: remove this you dn't need it
 public enum TextTone {
     case primary, secondary, accent, onAccent
 
