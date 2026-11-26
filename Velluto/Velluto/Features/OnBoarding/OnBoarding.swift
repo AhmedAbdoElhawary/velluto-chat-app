@@ -22,7 +22,7 @@ struct OnBoarding: View {
                 maxWidth: .infinity,
                 alignment: .trailing
             )
-            .padding(.horizontal, VSpace.l)
+            .padding(.horizontal, VSpace.x24)
 
             TabView(selection: $page) {
                 Welcome1().tag(0)
@@ -53,10 +53,10 @@ struct OnBoarding: View {
                         router.phase = .auth
                     }
                 }
-            }.padding(.horizontal, VSpace.l)
+            }.padding(.horizontal, VSpace.x24)
 
         }
-        .padding(.vertical, VSpace.l)
+        .padding(.vertical, VSpace.x24)
         .background(.vBackground)
 
     }
