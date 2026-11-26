@@ -41,7 +41,12 @@ struct Strings {
     }
     static let verifyEdit = LocalizedStringResource("verify.edit", defaultValue: "Edit")
     static let verifyResend = LocalizedStringResource("verify.resend", defaultValue: "Resend code in")
+    static let verifyResendNow = LocalizedStringResource("verify.resendNow", defaultValue: "Resend code")
 
     static let profileSetupTitle = LocalizedStringResource("profileSetup.title", defaultValue: "Your profile")
     static let profileSetupSubtitle = LocalizedStringResource("profileSetup.subtitle", defaultValue: "Your name and photo are visible to your contacts.")
+    //
+    static let numbersExample = LocalizedStringResource("example.number", defaultValue: "104 340 2139")
+    static let phoneLabel = LocalizedStringResource("field.phoneLabel", defaultValue: "Phone label")
+    //
 }
