@@ -47,6 +47,8 @@ struct Strings {
     static let profileSetupSubtitle = LocalizedStringResource("profileSetup.subtitle", defaultValue: "Your name and photo are visible to your contacts.")
     //
     static let numbersExample = LocalizedStringResource("example.number", defaultValue: "104 340 2139")
+    static let profileName = LocalizedStringResource("profile.name", defaultValue: "Your name")
+    static let profileAbout = LocalizedStringResource("profile.about", defaultValue: "About (optional)")
     static let phoneLabel = LocalizedStringResource("field.phoneLabel", defaultValue: "Phone label")
     //
 }

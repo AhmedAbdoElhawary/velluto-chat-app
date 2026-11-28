@@ -8,7 +8,7 @@
 import SwiftUI
 import VellutoKit
 
-struct VerfiyCode: View {
+struct VerfiyCodePage: View {
     @Environment(AppRouter.self) private var router
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var resends = 0
@@ -74,13 +74,13 @@ struct VerfiyCode: View {
 }
 
 #Preview("Obsidian") {
-    VerfiyCode()
+    VerfiyCodePage()
         .environment(AppRouter())
         .preferredColorScheme(.dark)
 }
 
 #Preview("Pearl") {
-    VerfiyCode()
+    VerfiyCodePage()
         .environment(AppRouter())
         .preferredColorScheme(.light)
 }

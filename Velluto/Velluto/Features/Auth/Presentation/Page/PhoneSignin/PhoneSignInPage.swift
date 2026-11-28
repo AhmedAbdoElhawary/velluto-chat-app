@@ -9,7 +9,7 @@ import SwiftUI
 import VellutoKit
 import VellutoDomain
 
-struct PhoneSignIn: View {
+struct PhoneSignInPage: View {
     @Environment(AppRouter.self) private var router
     @State private var phone: String = ""
     private let format = PhoneFormat.egypt
@@ -36,7 +36,6 @@ struct PhoneSignIn: View {
                 .padding(.all,VSpace.m)
                 
                 Divider()
-                    .frame(height: 0)
                 
                 HStack{
                     AppText.subhead("+39")
@@ -78,13 +77,13 @@ struct PhoneSignIn: View {
 }
 
 #Preview("Obsidian") {
-    PhoneSignIn()
+    PhoneSignInPage()
         .environment(AppRouter())
         .preferredColorScheme(.dark)
 }
 
 #Preview("Pearl") {
-    PhoneSignIn()
+    PhoneSignInPage()
         .environment(AppRouter())
         .preferredColorScheme(.light)
 }

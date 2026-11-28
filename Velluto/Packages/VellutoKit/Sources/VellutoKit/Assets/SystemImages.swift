@@ -11,5 +11,7 @@ public enum VImagePath {
     public static let call: String = "phone"
     public static let settings: String = "gearshape"
     public static let rightArrow: String = "chevron.right"
+    public static let person: String = "person"
+    public static let camera: String = "camera"
 }
 

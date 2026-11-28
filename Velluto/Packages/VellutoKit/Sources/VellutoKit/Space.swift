@@ -20,6 +20,7 @@ public enum VRadius {
     public static let field: CGFloat = 12
     public static let segmented: CGFloat = 10
     public static let sheet: CGFloat = 28
+    public static let max: CGFloat = 999
 }
 
 public enum VSize {
@@ -27,8 +28,10 @@ public enum VSize {
     public static let s: CGFloat = 8
     public static let xm: CGFloat = 12
     public static let m: CGFloat = 16
+    public static let mx: CGFloat = 18
     public static let l: CGFloat = 24
     public static let xl: CGFloat = 32
+    public static let xl2: CGFloat = 38
     public static let xxl: CGFloat = 48
     public static let codeBox: CGFloat = 60
     public static let caretWidth: CGFloat = 2
