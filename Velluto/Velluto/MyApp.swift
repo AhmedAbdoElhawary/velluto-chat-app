@@ -33,14 +33,14 @@ struct RootView: View {
             
             case .auth:
                 NavigationStack(path: $router.authPath) {
-                    PhoneSignIn()
-                        .navigationDestination(for: AuthRoute.self) { _ in VerfiyCode() }
+                    PhoneSignInPage()
+                        .navigationDestination(for: AuthRoute.self) { _ in VerfiyCodePage() }
                 }
                 .tint(.vAccent)
                 .transition(reduceMotion ? .identity : .offset(y: VMotion.launchRise))
 
             case .profileSetup:
-                ProfileSetup()
+                ProfileSetupPage()
                     .transition(reduceMotion ? .identity : .offset(y: VMotion.launchRise))
             
             case .main:
