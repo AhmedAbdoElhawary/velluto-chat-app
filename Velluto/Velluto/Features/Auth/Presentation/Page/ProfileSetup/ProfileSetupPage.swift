@@ -13,8 +13,7 @@ struct ProfileSetupPage: View {
     @Environment(AppRouter.self) private var router
     @State private var name: String = ""
     @State private var about: String = ""
-    private let format = PhoneFormat.egypt
-    private var isComplete: Bool { format.isComplete(name) }
+    @State private var isComplete: Bool = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: VSpace.xm) {
@@ -61,6 +60,10 @@ struct ProfileSetupPage: View {
                 .keyboardType(.namePhonePad)
                 .textContentType(.name)
                 .tint(.vAccent)
+                .onChange(of: name){ _,typedWord in
+                    isComplete = !typedWord.isEmpty
+                    
+                }
 
                 Divider()
 
@@ -78,7 +81,7 @@ struct ProfileSetupPage: View {
             Spacer()
 
             PrimaryButton(label: Strings.continueText, enable: isComplete) {
-
+                router.phase = .main
             }
 
         }.frame(
