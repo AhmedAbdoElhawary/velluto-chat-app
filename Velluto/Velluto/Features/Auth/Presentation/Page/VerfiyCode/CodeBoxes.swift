@@ -5,7 +5,6 @@
 //  Created by ahmed elhawary on 26/11/2026.
 //
 
-
 import SwiftUI
 import VellutoKit
 
@@ -21,10 +20,13 @@ struct CodeBoxes: View {
     private let mockCode = "123456"
 
     var body: some View {
-    
+
         HStack(spacing: VSpace.s) {
             ForEach(0..<codeLength, id: \.self) { index in
-                CodeBox(digit: digit(at: index), isActive: isFocused && index == code.count)
+                CodeBox(
+                    digit: digit(at: index),
+                    isActive: isFocused && index == code.count
+                )
             }
         }
         .onAppear { isFocused = true }
@@ -42,19 +44,27 @@ struct CodeBoxes: View {
         }
 
         .environment(\.layoutDirection, .leftToRight)
-        .keyframeAnimator(initialValue: CGFloat.zero, trigger: wrongAttempts) { [reduceMotion] content, offset in
+        .keyframeAnimator(initialValue: CGFloat.zero, trigger: wrongAttempts) {
+            [reduceMotion] content, offset in
             content.offset(x: reduceMotion ? 0 : offset)
         } keyframes: { _ in
             KeyframeTrack {
                 LinearKeyframe(VMotion.shakeOffset, duration: VMotion.shakeStep)
-                LinearKeyframe(-VMotion.shakeOffset, duration: VMotion.shakeStep * 2)
-                LinearKeyframe(VMotion.shakeOffset / 2, duration: VMotion.shakeStep * 2)
+                LinearKeyframe(
+                    -VMotion.shakeOffset,
+                    duration: VMotion.shakeStep * 2
+                )
+                LinearKeyframe(
+                    VMotion.shakeOffset / 2,
+                    duration: VMotion.shakeStep * 2
+                )
                 LinearKeyframe(0, duration: VMotion.shakeStep)
             }
         }
         .vHaptic(VHaptic.onWrongCode, trigger: wrongAttempts)
         .onChange(of: code) { _, new in
-            let digits = new.compactMap(\.wholeNumberValue).prefix(codeLength).map { String($0) }.joined()
+            let digits = new.compactMap(\.wholeNumberValue).prefix(codeLength)
+                .map { String($0) }.joined()
             if digits != new {
                 code = digits
                 return
@@ -90,11 +100,17 @@ private struct CodeBox: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: VSize.codeBox)
-        .background(.vSurface, in: .rect(cornerRadius: VRadius.field, style: .continuous))
+        .background(
+            .vSurface,
+            in: .rect(cornerRadius: VRadius.field, style: .continuous)
+        )
         .overlay {
             if isActive {
-                RoundedRectangle(cornerRadius: VRadius.field, style: .continuous)
-                    .strokeBorder(.vAccent, lineWidth: VSize.outline)
+                RoundedRectangle(
+                    cornerRadius: VRadius.field,
+                    style: .continuous
+                )
+                .strokeBorder(.vAccent, lineWidth: VSize.outline)
             }
         }
     }
